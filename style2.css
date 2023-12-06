@@ -1,0 +1,208 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Crimson Text', serif;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.big-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  padding: 0 0 2rem;
+  max-width: 83rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  z-index: 10;
+}
+
+/* Awal Subjumbotron -------------------------------------------------------------------------------------------------- */
+
+.subjumbotron1 .container section {
+  padding: 5rem 9%;
+  margin-bottom: 120px;
+}
+
+.subjumbotron1 .container section .subjumbotron {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 10rem;
+  position: relative;
+}
+
+.subjumbotron1 .container .content {
+ padding-left: 130px;
+}
+
+.subjumbotron1 .container .content h3 {
+  font-size: 3.5rem;
+  color: #7d4f50;
+  line-height: 1.8;
+}
+
+.subjumbotron1 .container .cloud {
+  position: absolute;
+  top: 222px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 10rem;
+  background-size: 250rem 18rem;
+  background: url(../IMG/cloud.png) repeat-x;
+  animation: cloud 10s linear infinite;
+}
+
+@keyframes cloud {
+  0% {
+    background-position-x: 0rem;
+  }
+  100% {
+    background-position-x: -250rem;
+  }
+}
+
+.subjumbotron1 .container .cloud-1 {
+  top: 180px;
+  opacity: 0.5;
+  height: 12rem;
+  background-size: 250rem 20rem;
+  animation-direction: reverse;
+  animation-duration: 15s;
+}
+
+/* Akhir Subjumbotron -------------------------------------------------------------------------------------------------- */
+
+/* Awal FAQ ----------------------------------------------------------------------------------------------------------- */
+.containerjudul {
+  background-color: #F9F1F1;
+}
+
+.judulfaq .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-bottom: 15px;
+  margin-top: 50px;
+}
+
+.judulfaq .container h1 {
+  color: #7d4f50;
+  font-size: 36px;
+}
+
+.judulfaq .container h1::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 48%;
+  transform: translateY(-50%, -50%);
+  background-color: #cc8b86;
+  width: 50px;
+  height: 3px;
+}
+
+.faq {
+background-color: #F9F1F1;
+}
+
+.faq .container {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  background-color: #F9F1F1;
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+
+.faq .container .accordion {
+  display: block;
+  width: 700px;
+}
+
+.faq .container .accordion .accordion-header {
+  width: 100%;
+  /* height: 35px; */
+  /* background-color: #cc8b86; */
+  color: #7d4f50;
+  margin: 5px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+  border: 3px solid #cc8b86;
+  padding: 10px;
+}
+
+.faq .container .accordion .accordion-header:hover {
+  background-color: #cc8b86;
+  color: #f9eae1;
+}
+
+.faq .container .accordion .accordion-header:hover span {
+  color: #f9eae1;
+}
+
+.faq .container .accordion .accordion-header h3 {
+  position: relative;
+  display: inline;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  left: 30px;
+  top: 1.7px;
+}
+
+.faq .container .accordion .accordion-body {
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: #F9F1F1;
+  color: #7d4f50;
+  display: none;
+  border-radius: 10px;
+}
+
+.faq .container .accordion .accordion-header span {
+  position: absolute;
+  /* top: 1.5px; */
+  height: 25px;
+  width: 25px;
+  color: #7d4f50;
+  text-align: center;
+  line-height: 25px;
+  font-size: 13px;
+}
+
+
+/* .faq .container .accordion:nth-child(1) .accordion-body{
+  display: block;
+} */
+
+/* Akhir FAQ ---------------------------------------------------------------------------------------------------------- */

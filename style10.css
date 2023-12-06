@@ -1,0 +1,270 @@
+.logo img {
+  width: 100px;
+  cursor: pointer;
+}
+
+/* Awal Login ----------------------------------------------------------------------------------------------------*/
+.right {
+  float: left;
+  margin-left: 15%;
+  position: relative;
+}
+
+.right .form {
+  height: 100%;
+  width: 100%;
+  position: static;
+}
+
+.right .form .form-box {
+  width: 380px;
+  height: 480px;
+  position: relative;
+  margin: 6% auto;
+  background: rgb(189, 249, 203);
+  padding: 5px;
+}
+
+.right .form-box {
+  width: 300px;
+  height: 410px;
+  /* margin: auto; */
+  margin-right: 85px;
+  position: relative;
+  background: rgb(58, 77, 57);
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.right .button-box {
+  width: 220px;
+  margin: 20px auto;
+  position: relative;
+  box-shadow: 0 0 10px 1px #4f6f52;
+  border-radius: 15px;
+}
+
+.right .judul {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  font-family: "Crimson Text", serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ece3ce;
+}
+
+.right #btn2 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 110px;
+  height: 100%;
+  background: #739072;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.right .input-group-login {
+  top: 80px;
+  position: absolute;
+  width: 200px;
+  transition: 0.5s;
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+}
+
+.right .input-group-register {
+  top: 80px;
+  position: absolute;
+  width: 200px;
+  transition: 0.5s;
+}
+
+.right .input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #739072;
+  outline: none;
+  background: transparent;
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ece3ce;
+}
+
+.input-field,
+::placeholder {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ece3ce;
+}
+
+.right .input-field:hover {
+  border-bottom: 1px solid #ece3ce;
+}
+
+.input-field,
+:hover::placeholder {
+  color: #4f6f52;
+}
+
+.submit-btn {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-size: 18px;
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin-top: 30px;
+  margin-left: 15px;
+  background: #3a4d39;
+  color: #ece3ce;
+  border: 0;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 1px #4f6f52;
+}
+
+.submit-btn:hover {
+  background-color: #739072;
+  color: #ece3ce;
+}
+
+/* .input-group-login .liw{
+    padding-top: 60px;
+    margin-bottom: -20px;
+    text-align: center;
+    color: #f9eae1;
+  } */
+
+.input-group-login .icons a {
+  text-decoration: none;
+}
+
+.input-group-login .icons ion-icon {
+  color: #ece3ce;
+  font-size: 25px;
+  padding-top: -5px;
+  padding-left: 20px;
+}
+
+.input-group-login .icons ion-icon:hover {
+  color: #739072;
+}
+
+.input-group-login p {
+  color: #ece3ce;
+  padding-left: 22px;
+  padding-top: 5px;
+}
+
+.input-group-login span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#login {
+  left: 50px;
+}
+
+#login input {
+  color: white;
+  font-size: 15;
+}
+
+#register {
+  left: 450px;
+}
+
+#register input {
+  color: white;
+  font-size: 15;
+}
+
+.input-group-register .icons a {
+  text-decoration: none;
+}
+
+.input-group-register .icons ion-icon {
+  color: #ece3ce;
+  font-size: 25px;
+  padding-top: -5px;
+  padding-left: 20px;
+}
+
+.input-group-register .icons ion-icon:hover {
+  color: #739072;
+}
+
+.container {
+  height: 100%;
+  overflow: auto; /* Menghilangkan overflow jika gambar tinggi */
+  object-fit: cover;
+}
+
+.left-image {
+  width: 100%;
+  height: 510px;
+  box-sizing: border-box;
+  border: 3px solid #739072;
+  border-radius: 10px;
+}
+
+/* Akhir Login  ---------------------------------------------------------------------------------------------------- */
+
+/* Custom styling for the dropdown menu */
+.dropdown-menu {
+  width: 300px; /* Lebar dropdown menu */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk memberikan kedalaman */
+}
+
+/* Style for the form inside the dropdown */
+.dropdown-menu form {
+  text-align: left; /* Posisi teks kiri pada formulir */
+}
+
+/* Style for the form labels */
+.form-label {
+  font-weight: bold;
+  color: #333; /* Warna label */
+}
+
+/* Style for the form inputs */
+.form-control {
+  border: 1px solid #ddd; /* Warna border input */
+  border-radius: 5px;
+}
+
+/* Style for the Remember me checkbox */
+.form-check-input {
+  margin-top: 5px;
+}
+
+/* Style for the submit button */
+.btn-primary {
+  background-color: #007bff; /* Warna latar belakang tombol */
+  border: 1px solid #007bff; /* Warna border tombol */
+}
+
+/* Style for the links at the bottom */
+.dropdown-item {
+  color: #007bff; /* Warna teks link */
+}
+
+/* Style for the divider */
+.dropdown-divider {
+  border-top: 2px solid #ddd; /* Warna border atas divider */
+}

@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Crimson Text', serif;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.big-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  padding: 0 0 2rem;
+  max-width: 83rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  z-index: 10;
+}
+
+/* Awal Subjumbotron -------------------------------------------------------------------------------------------------- */
+
+.subjumbotron1 .container section {
+  padding: 5rem 9%;
+  margin-bottom: 120px;
+}
+
+.subjumbotron1 .container section .subjumbotron {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 10rem;
+  position: relative;
+}
+
+.subjumbotron1 .container .content {
+ padding-left: 250px;
+}
+
+.subjumbotron1 .container .content h3 {
+  font-size: 3.5rem;
+  color: #7d4f50;
+  line-height: 1.8;
+}
+
+.subjumbotron1 .container .cloud {
+  position: absolute;
+  top: 222px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 10rem;
+  background-size: 250rem 18rem;
+  background: url(../IMG/cloud.png) repeat-x;
+  animation: cloud 10s linear infinite;
+}
+
+@keyframes cloud {
+  0% {
+    background-position-x: 0rem;
+  }
+  100% {
+    background-position-x: -250rem;
+  }
+}
+
+.subjumbotron1 .container .cloud-1 {
+  top: 180px;
+  opacity: 0.5;
+  height: 12rem;
+  background-size: 250rem 20rem;
+  animation-direction: reverse;
+  animation-duration: 15s;
+}

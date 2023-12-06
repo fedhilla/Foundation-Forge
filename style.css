@@ -1,0 +1,2471 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Crimson Text", serif;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.big-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #f1f0ec;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  padding: 0 0 2rem;
+  max-width: 83rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  z-index: 10;
+  margin-top: 50px;
+}
+
+/* coba coba aja si*/
+
+/* Awal Navigation Bar------------------------------------------------------------------------------------------------ */
+header {
+  position: relative;
+  z-index: 70;
+  transition: 0.6s;
+}
+
+header .container {
+  margin-top: 8px;
+  min-height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+
+header.sticky {
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(236, 227, 206);
+}
+
+header.sticky .container {
+  margin-top: 10px;
+  min-height: 0vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlay {
+  display: none;
+}
+
+.logo img {
+  width: 70px;
+  cursor: pointer;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar ul li a {
+  position: relative;
+}
+
+.navbar ul li a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #739072;
+  transition: width 0.3s;
+}
+
+.navbar ul li a:hover:after {
+  width: 50%;
+}
+
+.navbar ul li a:hover {
+  color: #739072;
+}
+
+.navbar a {
+  margin-left: 2.5rem;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 1rem;
+  height: 2.3rem;
+  width: 5rem;
+  line-height: 2.5rem;
+  color: #3a4d39;
+  text-align: center;
+}
+
+.icons li a {
+  display: inline;
+  position: relative;
+}
+
+.icon li a {
+  color: #3a4d39;
+}
+
+.icons a i.fas.fa-user {
+  color: #3a4d39;
+}
+
+header .icons div {
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 2.5rem;
+  border-radius: 0.5rem;
+  color: #3a4d39;
+  font-size: 17px;
+  text-align: center;
+}
+
+header .icons div:hover {
+  background: #739072;
+  color: #ece3ce;
+}
+
+.hamburger-menu {
+  position: relative;
+  z-index: 999;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger-menu .bar {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: #3a4d39;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.bar::before,
+.bar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #3a4d39;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.bar::before {
+  transform: translateY(-8px);
+}
+
+.bar::after {
+  transform: translateY(8px);
+}
+
+.big-wrapper.active .hamburger-menu .bar {
+  background-color: transparent;
+}
+
+.big-wrapper.active .bar::before {
+  transform: translateY(0) rotate(-45deg);
+  background-color: #739072;
+}
+
+.big-wrapper.active .bar::after {
+  transform: translateY(0) rotate(45deg);
+  background-color: #739072;
+}
+
+.toggle-btn {
+  display: none;
+}
+
+.big-wrapper.light .toggle-btn i:last-child {
+  display: none;
+}
+
+.big-wrapper.light .toggle-btn i:first-child {
+  display: block;
+}
+
+.big-wrapper.dark .toggle-btn i:last-child {
+  display: block;
+}
+
+.big-wrapper.dark .toggle-btn i:first-child {
+  display: none;
+}
+
+.left button {
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #739072;
+  border-width: 0;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ece3ce;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.left button a {
+  color: #f1f0ec;
+}
+
+.left a:hover {
+  color: #3a4d39;
+}
+
+.left button {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.75s;
+}
+
+.left button:hover {
+  background: #ece3ce;
+  color: #3a4d39;
+  transition-delay: 0s;
+}
+/* Akhir Navigation Bar------------------------------------------------------------------------------------------------ */
+
+/* Awal Jumbotron--------------------------------------------------------------------------------------------------- */
+.jumbotron .container {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  display: flex;
+  align-items: normal;
+  justify-content: space-between;
+  margin-top: 150px;
+}
+
+.left h1 {
+  font-size: 50px;
+  letter-spacing: 2px;
+  color: #3a4d39;
+}
+
+.left span {
+  color: #739072;
+  font-size: 45px;
+}
+
+.left p {
+  letter-spacing: 1.2px;
+  line-height: 30px;
+  color: #3a4d39;
+  font-weight: 600;
+}
+.right img {
+  width: 600px;
+  height: auto;
+}
+/* Akhir Jumbotron --------------------------------------------------------------------------------------------------- */
+
+/* Awal Table */
+.table .container {
+  color: #3a4d39;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  background-color: #f1f0ec;
+}
+
+.table .container table {
+  border-collapse: collapse;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  background-color: #f1f0ec;
+  text-align: left;
+  overflow: hidden;
+}
+
+.table .container thead {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.table .container th {
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.table .container td {
+  padding: 1rem 2rem;
+}
+
+.table .container tr:nth-child(even) {
+  background-color: #f3e3e2;
+}
+
+.table .container td i {
+  color: #3a4d39;
+}
+
+/* Akhir Table */
+
+/* Awal Count-Up ---------------------------------------------------------------------------------------------------- */
+
+.judulcounter-up {
+  background-color: #f1f0ec;
+}
+
+.judulcounter-up .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.judulcounter-up .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulcounter-up .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 42%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 200px;
+  height: 3px;
+}
+
+.counter-up {
+  background-color: #f1f0ec;
+}
+
+.counter-up .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-top: 180px;
+  margin-bottom: 50px;
+  /* margin-right: 100px; */
+  z-index: 1;
+  background-color: #f1f0ec;
+}
+
+.counter-up .container .middle {
+  position: absolute;
+  margin-top: 100px;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.counter-up .container .counting-sec {
+  padding: 40px 0;
+  margin: auto;
+  width: 100%;
+}
+
+.counter-up .container .inner-width {
+  max-width: 1200px;
+  display: flex;
+}
+
+.counter-up .container .col {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  color: #3a4d39;
+  text-transform: capitalize;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.counter-up .container .col i {
+  font-size: 40px;
+  color: #739072;
+}
+
+.counter-up .container .num {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+/* Akhir Count-Up -------------------------------------------------------------------------------------------------- */
+
+/* coba coba kenapa FF? */
+.container1 h1 {
+  font-size: 2rem;
+  color: #3a4d39;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.container1 .box1 h2 {
+  font-size: 2rem;
+  color: #739072;
+  margin-bottom: 0.5rem;
+}
+
+.container1 .box1 p {
+  font-size: 1.125rem;
+  color: #6c6c6c;
+  margin-bottom: 1rem;
+}
+
+.container1 .box1 .icon {
+  width: 50px;
+  height: 50px;
+  color: #4f6f52;
+}
+
+.container1 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+}
+
+.container1 .box1 {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  position: relative;
+}
+
+/* Awal Services ---------------------------------------------------------------------------------------------------- */
+
+.judulservices .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  z-index: 1;
+  margin-bottom: 25px;
+}
+
+.judulservices .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulservices .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 45.3%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 120px;
+  height: 3px;
+}
+
+.boxes .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  z-index: 1;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 230px;
+  grid-gap: 0 15px;
+  margin-bottom: 150px;
+  overflow: hidden;
+}
+
+.box {
+  border: 2px solid #3a4d39;
+  position: relative;
+  height: 150px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.box .inner-box {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 45%;
+  transform: translateY(-50%);
+  color: #3a4d39;
+  transition: 0.3s;
+}
+
+.inner-box span {
+  background-color: #f1f0ec;
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  line-height: 80px;
+  font-size: 50px;
+}
+
+.inner-box h3 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.box p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a4d39;
+  text-align: center;
+  word-break: break-all;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align-last: center;
+  opacity: 0;
+}
+
+.box:hover {
+  border-color: #739072;
+}
+
+.box:hover .inner-box {
+  margin-top: -60px;
+  color: #739072;
+}
+
+.box:hover p {
+  opacity: 1;
+  margin-top: 0;
+  transition: 0.4s;
+  transition-delay: 0.3s;
+}
+
+/* Akhir Services ---------------------------------------------------------------------------------------------------- */
+
+/* Awal Product ---------------------------------------------------------------------------------------------------- */
+.ag-format-container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.ag-courses_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+.ag-courses_item {
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
+
+  margin: 0 15px 30px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+}
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #3a4d39;
+
+  overflow: hidden;
+
+  position: relative;
+}
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+  text-decoration: none;
+  color: #fff;
+}
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+.ag-courses-item_title {
+  min-height: 87px;
+  margin: 0 0 25px;
+
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date-box {
+  font-size: 18px;
+  color: #fff;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date {
+  font-weight: bold;
+  color: #f1f0ec;
+
+  -webkit-transition: color 0.5s ease;
+  -o-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #739072;
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+  background-color: #739072;
+}
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+  background-color: #739072;
+}
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+  background-color: #739072;
+}
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+  background-color: #739072;
+}
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+  background-color: #739072;
+}
+
+@media only screen and (max-width: 979px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
+  }
+  .ag-courses-item_title {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+}
+@media only screen and (max-width: 639px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .ag-courses-item_title {
+    min-height: 72px;
+    line-height: 1;
+
+    font-size: 24px;
+  }
+  .ag-courses-item_link {
+    padding: 22px 40px;
+  }
+  .ag-courses-item_date-box {
+    font-size: 16px;
+  }
+}
+/* ---------------------------------------------------BATAS------------------------------------------
+.judulproduct .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 100px; 
+  z-index: 1;
+  margin-bottom: 30px;
+}*/
+
+.judulproduct .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  z-index: 1;
+  margin-bottom: 30px;
+}
+
+.container {
+  position: relative;
+}
+
+.judulproduct .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+  align-items: center;
+  justify-content: center;
+}
+
+.judulproduct .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 46.6%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 90px;
+  height: 3.5px;
+  align-items: center;
+}
+
+/* Akhir Product ---------------------------------------------------------------------------------------------------- */
+
+/* Awal Review ------------------------------------------------------------------------------------------------------- */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+figure.snip1157 {
+  font-family: "Raleway", Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  color: #333;
+  text-align: left;
+  box-shadow: none !important;
+}
+.display {
+  display: inline-block;
+}
+
+figure.snip1157 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+  transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+figure.snip1157 img {
+  max-width: 100%;
+  vertical-align: middle;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  margin: 40px 0 0 10px;
+}
+figure.snip1157 blockquote {
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  background-color: #fafafa;
+  padding: 25px 50px 30px 50px;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6em;
+  font-style: italic;
+}
+figure.snip1157 blockquote:before,
+figure.snip1157 blockquote:after {
+  font-family: "FontAwesome";
+  content: "\201C";
+  position: absolute;
+  font-size: 50px;
+  opacity: 0.3;
+  font-style: normal;
+}
+figure.snip1157 blockquote:before {
+  top: 25px;
+  left: 20px;
+}
+figure.snip1157 blockquote:after {
+  content: "\201D";
+  right: 20px;
+  bottom: 0;
+}
+figure.snip1157 .arrow {
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #fafafa;
+  margin: 0;
+  position: absolute;
+}
+figure.snip1157 .author {
+  position: absolute;
+  bottom: 45px;
+  padding: 0 10px 0 120px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #3a4d39;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+}
+figure.snip1157 .author h5 {
+  opacity: 0.8;
+  margin: 0;
+  font-weight: 800;
+}
+figure.snip1157 .author h5 span {
+  font-weight: 400;
+  text-transform: none;
+  padding-left: 5px;
+}
+
+/* Demo purposes only */
+html {
+  height: 100%;
+}
+
+/* batassss percobaan review */
+
+.judulreview .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-bottom: 70px;
+}
+
+.judulreview .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulreview .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 45%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 130px;
+  height: 3px;
+}
+
+.review .container {
+  margin-top: -60px;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin-bottom: 40px;
+}
+
+.review .container .review-item {
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 55px;
+  position: relative;
+  width: 400px;
+  height: 255px;
+  margin-left: 55px;
+  padding: 50px 30px 70px 30px;
+  background: #f1f0ec;
+}
+
+.review .container .review-item img {
+  border-radius: 50%;
+  width: 150px;
+  /* display: none; */
+  position: absolute;
+  left: -30px;
+  top: -10px;
+  border: 10px double #739072;
+}
+
+.review .container .review-item .quote-icon i {
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
+  color: #739072;
+  font-size: 48px;
+  opacity: 1;
+}
+
+.review .container .review-item p {
+  margin-left: 100px;
+  margin-top: -30px;
+  font-weight: 500;
+  color: #3a4d39;
+}
+
+.review .container .review-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 30px;
+  color: #3a4d39;
+}
+
+.review .container .review-item span.position {
+  font-size: 14px;
+  color: #3a4d39;
+  font-weight: 500;
+  float: left;
+}
+
+.review .container .review-item ul.stars {
+  margin-top: 20px;
+  position: absolute;
+}
+
+.review .container .review-item ul.stars li {
+  display: inline-block;
+}
+
+.review .container .review-item ul.stars li i {
+  font-size: 14px;
+  color: #739072;
+}
+
+.review .owl-dots {
+  margin-top: 0;
+  text-align: center;
+}
+
+.review .owl-dots .owl-dot {
+  margin: 0 5px;
+  width: 14px;
+  height: 14px;
+  background-color: #739072;
+  transition: all 0.5s;
+  margin-bottom: 100px;
+}
+
+.review .owl-dots .active {
+  height: 14px;
+  background-color: transparent;
+  border: 2px solid #3a4d39;
+}
+
+.review .container .item:hover {
+  display: block;
+  transition: all ease 0.5s;
+  transform: scale(1.05) translateY(-5px);
+}
+
+/* Akhir Review ------------------------------------------------------------------------------------------------------- */
+
+/* Awal Partner ---------------------------------------------------------------------------------------------------*/
+.judulpartner .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 5px auto;
+}
+
+.judulpartner .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulpartner .container h1:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 0px;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.judulpartner .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 43.5%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 140px;
+  height: 3px;
+}
+
+.partner .container {
+  padding-top: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin-bottom: 80px;
+  display: flex;
+}
+
+.partner .container img {
+  width: 130px;
+  transform-origin: bottom right; /* ubah baris ini */
+}
+
+.partner .container .item {
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+}
+
+.partner .slick-slide {
+  margin: 15px;
+}
+
+.partner .container .item:hover {
+  display: block;
+  transition: all ease 0.5s;
+  transform: scale(1.05) translateY(-5px);
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+/* Akhir Partner ---------------------------------------------------------------------------------------------------- */
+
+/* Awal Timeline -------------------------------------------------------------------------------------------------------*/
+.containerjudul {
+  background-color: #f1f0ec;
+}
+
+.judultimeline .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 5px auto;
+  /* margin-bottom: 20px; */
+  background-color: #3a4d39;
+  margin-top: 130px;
+}
+
+.judultimeline .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judultimeline .container h1:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 0px;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.judultimeline .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 44%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 120px;
+  height: 3px;
+}
+
+.timeline .container {
+  margin-top: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #f1f0ec;
+}
+
+.timeline .container .start ul li:nth-child(odd) {
+  /* background: url(../IMG/process-line-3-.png) 65px top no-repeat; */
+  padding-top: 20px;
+}
+
+.timeline .container .start ul li:nth-child(even) {
+  /* background: url(../IMG/process-line-2-.png) 65px top no-repeat; */
+  padding-top: 20px;
+  padding-left: 590px;
+}
+
+/* #foto1_tl {
+  margin-top: 20px;
+} */
+
+.timeline .container ul .line1 img {
+  width: 420px;
+  margin-left: 115px;
+  margin-top: -20px;
+}
+
+.timeline .container ul .line2 img {
+  width: 500px;
+  margin-left: 100px;
+}
+
+.timeline .container ul .line3 img {
+  width: 500px;
+  margin-left: -400px;
+  margin-top: 10px;
+}
+
+.timeline .container ul li .left .icon img {
+  width: 270px;
+  margin-left: 5px;
+  margin-top: -20px;
+  border: #3a4d39;
+}
+
+.timeline .container ul li .left .icon .two {
+  width: 290px;
+  margin-left: 0px;
+  margin-top: -80px;
+}
+
+.timeline .container ul li .left .icon .three {
+  width: 350px;
+  margin-left: 0px;
+  margin-top: -50px;
+}
+
+.timeline .container ul li .left .icon .four {
+  width: 290px;
+  margin-left: 0px;
+  margin-top: -40px;
+}
+
+.timeline .container ul li .left .icon .five {
+  width: 300px;
+  margin-left: 30px;
+  margin-top: -40px;
+}
+
+.timeline .container .start ul li .icon {
+  /* margin: 30px 0; */
+  display: inline-block;
+  height: 124px;
+  margin-right: 30px;
+  width: 124px;
+  text-align: center;
+}
+
+.timeline .container .start ul li h4 {
+  color: #3a4d39;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.timeline .container .start ul li h5 {
+  color: #3a4d39;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.timeline .container .start ul li .media-body {
+  max-width: 390px;
+}
+
+.timeline .container .start ul li p {
+  color: #3a4d39;
+  text-align: left;
+}
+
+/* .timeline .container .left .two .icon img {
+  width: 180px;
+  height: 180px;
+  margin-top: -1000px;
+  margin-left: -10px;
+}
+
+.timeline .container ul li .left .three .icon img {
+  width: 150px;
+  height: 150px;
+  margin-left: -50px;
+}
+
+.timeline .container ul li .left .four .icon img {
+  width: 150px;
+  height: 150px;
+  margin-left: -50px;
+}
+
+.timeline .container ul li .left .five .icon img {
+  width: 150px;
+  height: 150px;
+  margin-left: -50px;
+} */
+
+.timeline .container ul li {
+  list-style: none;
+}
+
+/* Akhir Timeline ------------------------------------------------------------------------------------------------------*/
+
+/* Awal Subjumbotron -------------------------------------------------------------------------------------------------- */
+
+.subjumbotron1 .container section {
+  padding: 5rem 9%;
+  margin-bottom: 120px;
+}
+
+.subjumbotron1 .container section .subjumbotron {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 10rem;
+  position: relative;
+}
+
+.subjumbotron1 .container .content {
+  padding-left: 130px;
+}
+
+.subjumbotron1 .container .content h3 {
+  font-size: 3.5rem;
+  color: #3a4d39;
+  line-height: 1.8;
+}
+
+.subjumbotron1 .container .cloud {
+  position: absolute;
+  top: 222px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 10rem;
+  background-size: 250rem 18rem;
+}
+
+@keyframes cloud {
+  0% {
+    background-position-x: 0rem;
+  }
+  100% {
+    background-position-x: -250rem;
+  }
+}
+
+.subjumbotron1 .container .cloud-1 {
+  top: 180px;
+  opacity: 0.5;
+  height: 12rem;
+  background-size: 250rem 20rem;
+  animation-direction: reverse;
+  animation-duration: 15s;
+}
+
+/* Akhir Subjumbotron -------------------------------------------------------------------------------------------------- */
+
+/* PAYMENT */
+
+.payment .container {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  max-width: 700px;
+  width: 100%;
+  background-color: #f1f0ec;
+  color: #3a4d39;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.payment .container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.payment .container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 40px;
+  height: 3px;
+  width: 90px;
+  border-radius: 5px;
+  background: #3a4d39;
+}
+
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+form .user-details .input-box input::placeholder {
+  color: #739072;
+}
+
+form .user-details .input-box input:hover::placeholder {
+  color: #ece3ce;
+}
+
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #3a4d39;
+}
+
+form .class-details .class-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .level-details .level-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .payment-details .payment-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  /* margin-right: 10px; */
+  /* margin-left: 10px; */
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.class-details label {
+  margin-top: 20px;
+  margin-left: -40px;
+}
+
+.level-details label {
+  margin-top: 20px;
+  margin-left: -42px;
+}
+
+.payment-details label {
+  margin-top: 20px;
+  margin-left: -68px;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three,
+#dot-4:checked ~ .category label .four,
+#dot-5:checked ~ .category label .five,
+#dot-6:checked ~ .category label .six,
+#dot-7:checked ~ .category label .seven,
+#dot-8:checked ~ .category label .eight,
+#dot-9:checked ~ .category label .nine,
+#dot-10:checked ~ .category label .ten,
+#dot-11:checked ~ .category label .eleven,
+#dot-12:checked ~ .category label .twelve,
+#dot-13:checked ~ .category label .thirteen,
+#dot-14:checked ~ .category label .fourteen {
+  background: #ece3ce;
+  border-color: #739072;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #f1f0ec;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: #739072;
+}
+
+form .button input:hover {
+  /* transform: scale(0.99); */
+  background-color: #ece3ce;
+}
+
+/* PAYMENT */
+
+/* PROFILE */
+
+.pre-title {
+  color: #3a4d39;
+}
+
+#hero {
+  height: 720px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* We're not going to use automatic template columns, because we need to know when the columns is go below. So we can exchange the order of the element */
+  align-items: center;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+  color: #3a4d39;
+}
+.hero-left p {
+  margin-left: 100px;
+}
+.hero-name span {
+  color: #739072 !important;
+}
+
+.hero-right img {
+  width: 550px;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+.social {
+  font-size: 20px;
+  color: #3a4d39;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.social i {
+  font-size: 30px;
+  color: #3a4d39;
+  margin: 20px;
+}
+
+span {
+  color: #bb9cc0;
+}
+
+.hero-left h5,
+h2,
+p {
+  color: #3a4d39;
+}
+
+.my-profile a {
+  border: 3px solid #3a4d39;
+  border-radius: 50px;
+}
+
+.hero-left .login-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Services Section */
+#services {
+  background-color: var(--secondaryBackgroundColor);
+  padding: var(--sectionPadding);
+}
+
+.services .pre-title {
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.services-title {
+  text-align: center;
+}
+
+.service {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--primaryBackgroundColor);
+  border-radius: var(--itemBorderRadius);
+}
+
+.service h4 {
+  margin: 1.5rem 0;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.service-icon {
+  background: var(--thirdBackgroundColor);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 1.3rem;
+  border-radius: 0.5rem;
+}
+
+.service-icon svg {
+  fill: var(--primaryIconColor);
+}
+
+.service-icon {
+  background: var(--thirdBackgroundColor);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 1.3rem;
+  border-radius: 0.5rem;
+}
+
+.service-icon svg {
+  fill: var(--primaryIconColor);
+}
+
+.hero-left button {
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #739072;
+  border-width: 0;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ece3ce;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.hero-left button a {
+  color: #f1f0ec;
+}
+
+/* PROFILE */
+
+/* Awal Footer ------------------------------------------------------------------------------------------------------ */
+
+footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 20px 100px;
+  background: #739072;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 90%;
+}
+
+footer .container .sec {
+  margin-right: 30px;
+}
+
+footer .container .sec.aboutus {
+  width: 40%;
+}
+
+footer .container .sec.kelas h2 {
+  position: relative;
+  color: #ece3ce;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+footer .container .sec.kelas h2::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #ece3ce;
+}
+
+footer p {
+  color: #ece3ce;
+}
+
+footer .container .sci {
+  margin-top: 20px;
+  display: flex;
+}
+
+footer .container .sci li {
+  list-style: none;
+}
+
+footer .container .sci li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #ece3ce;
+  font-size: 20px;
+}
+
+footer .container .sci li a:hover {
+  color: #ece3ce;
+}
+
+footer .container .kelas {
+  position: relative;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .container .kelas ul li {
+  list-style: none;
+}
+
+footer .container .kelas ul li a {
+  color: #ece3ce;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+footer .container .kelas ul li a:hover {
+  color: #ece3ce;
+}
+
+footer .container .about {
+  position: relative;
+  /* width: 20%; */
+  justify-content: center;
+  align-items: center;
+}
+
+footer .container .about ul li {
+  list-style: none;
+}
+
+footer .container .about ul li a {
+  color: #ece3ce;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+footer .container .about ul li a:hover {
+  color: #739072;
+}
+
+/* Akhir Footer ------------------------------------------------------------------------------------------------------ */
+
+/* CopyRight --------------------------------------------------------------------------------------------------------- */
+.copyrightText {
+  width: 100%;
+  background: #739072;
+  text-align: center;
+  color: #ece3ce;
+}
+
+.copyrightText p {
+  color: #ece3ce;
+}
+
+/* CopyRight --------------------------------------------------------------------------------------------------------- */
+
+.test .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  z-index: 1;
+}
+
+.test p {
+  font-size: 20px;
+}
+
+/* ======================================================================================================================================================================================================================== */
+
+/* ================================================================================================= Awal Responsive Screen =============================================================================================== */
+@media screen and (max-width: 670px) {
+  /* Awal Navigation Bar ------------------------------------------------------------------------------------------------- */
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 500%;
+    width: 50%;
+    height: 100%;
+    background-color: #fffdf8;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: 1s;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    margin-left: 0;
+    margin-top: 50px;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+  .big-wrapper.active .navbar {
+    transform: translateX(0);
+    box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .big-wrapper.active .overlay {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  /* Akhir Navigation Bar --------------------------------------------------------------------------------------------------*/
+
+  /* Awal Jumbotron ---------------------------------------------------------------------------------------------------- */
+  .jumbotron .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 70px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Akhir Jumbotron --------------------------------------------------------------------------------------------------- */
+}
+
+/* Awal Coba Gratis ----------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 860px) {
+  .wrapper .kotak {
+    padding: 20px;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 60px;
+    right: -15px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .wrapper .kotak {
+    padding: 20px;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 60px;
+    right: -15px;
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  .wrapper .kotak {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .wrapper .kotak {
+    max-width: 90vw;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 60px;
+    right: -15px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .wrapper .kotak {
+    padding: 30px;
+    width: 540px;
+    max-width: 100%;
+  }
+}
+
+/* Akhir Coba Gratis --------------------------------------------------------------------------------------------------- */
+/* Awal Counter Up --------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 870px) {
+  .judulcounter-up .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 44%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 0;
+  }
+  .counter-up {
+    margin-top: 280px;
+  }
+
+  .counter-up .container .inner-width {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Akhir Counter Up ------------------------------------------------------------------------------------------------------- */
+
+/* Awal Services ---------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 870px) {
+  .judulservices .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 43.5%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 0;
+  }
+
+  .boxes .container {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 10px; */
+  }
+
+  .box:nth-child(2) {
+    margin-bottom: 40px;
+  }
+
+  .box:nth-child(3) {
+    margin-bottom: 40px;
+  }
+
+  .box:nth-child(4) {
+    margin-bottom: 40px;
+  }
+
+  .box:nth-child(5) {
+    margin-bottom: 40px;
+  }
+
+  .box:nth-child(6) {
+    margin-bottom: 40px;
+  }
+
+  .box p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #3a4d39;
+    text-align: center;
+    word-break: break-all;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align-last: center;
+    opacity: 0;
+  }
+}
+
+/* Akhir Services ---------------------------------------------------------------------------------------------------------- */
+
+/* Awal Product ---------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 870px) {
+  .judulproduct .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 44%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 0;
+  }
+
+  .product .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Akhir Product ---------------------------------------------------------------------------------------------------------- */
+
+/* Awal Promo ---------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 870px) {
+  .judulpromo .container {
+    margin-bottom: 40px;
+  }
+
+  .judulpromo .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 44%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 0;
+  }
+
+  .promo .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px 20px;
+    height: 1400px;
+  }
+}
+
+/* Akhir Promo ---------------------------------------------------------------------------------------------------------- */
+
+/* Awal Review ------------------------------------------------------------------------------------------------------------- */
+.judulreview .container {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.judulreview .container h1 {
+  color: #293241;
+}
+
+section {
+  float: left;
+  position: relative;
+  padding: 0 0;
+  z-index: 1;
+  width: 100%;
+  /* background: #f1f8fc; */
+  text-align: center;
+}
+
+.section-separator {
+  float: left;
+  width: 100%;
+  position: relative;
+  margin: 20px 0;
+}
+
+.section-separator:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 3px;
+  width: 50px;
+  border-radius: 3px;
+  z-index: 2;
+  /* background-color: #007aff; */
+  margin-left: -25px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.listing-carousel-button {
+  position: absolute;
+  top: 50%;
+  width: 80px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: -25px;
+  z-index: 100;
+  cursor: pointer;
+  background: #3e949c;
+  box-shadow: 0 9px 26px rgba(58, 87, 135, 0.45);
+  transition: all 200ms linear;
+  outline: none;
+}
+
+.listing-carousel-button.listing-carousel-button-next {
+  color: #f2f2f6;
+  font-size: 23px;
+  right: -30px;
+  padding-right: 35px;
+  border-radius: 60px 0 0 60px;
+}
+
+.listing-carousel-button.listing-carousel-button-prev {
+  color: #f2f2f6;
+  font-size: 23px;
+  left: -30px;
+  padding-left: 35px;
+  border-radius: 0 60px 60px 0;
+}
+
+.listing-carousel-button.listing-carousel-button-next:hover {
+  right: -15px;
+  background: #ff7816;
+}
+
+.listing-carousel-button.listing-carousel-button-prev:hover {
+  left: -15px;
+  background: #ff7816;
+}
+
+.testi-item {
+  transition: all 0.3s ease-in-out;
+  transform: scale(0.9);
+  opacity: 0.9;
+}
+
+.testimonials-text {
+  /* padding: 75px 50px 75px; */
+  padding: 80px 50px 40px;
+  overflow: hidden;
+  background: #f2f2f6;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.testimonials-text-after {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  color: #3e949c;
+  opacity: 0.5;
+  font-size: 35px;
+  transition: all 400ms linear;
+  bottom: 25px;
+  right: 30px;
+}
+
+.testimonials-text-before {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  color: #3e949c;
+  opacity: 0.5;
+  font-size: 35px;
+  transition: all 400ms linear;
+  top: 25px;
+  left: 30px;
+}
+
+.testimonials-text .listing-rating {
+  float: none;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.listing-rating i {
+  color: #3e949c;
+}
+
+.testimonials-avatar h3 {
+  font-weight: bold;
+  color: #293241;
+  font-size: 18px;
+}
+
+.testimonials-avatar h4 {
+  font-weight: 600;
+  font-size: 15px;
+  padding-top: 8px;
+  color: #3e949c;
+}
+
+.testimonials-carousel .swiper-slide {
+  padding: 30px 0;
+}
+
+.testi-avatar {
+  position: absolute;
+  left: 50%;
+  top: -30px;
+  width: 90px;
+  height: 90px;
+  margin-left: -45px;
+  z-index: 20;
+}
+
+.testi-avatar img {
+  width: 90px;
+  height: 90px;
+  float: left;
+  border-radius: 100%;
+  border: 4px solid #3e949c;
+  box-shadow: 0 9px 26px rgba(58, 87, 135, 0.1);
+}
+
+.swiper-slide-active .testi-avatar img {
+  border: 4px solid #ff7816;
+}
+
+.swiper-slide-active .testimonials-avatar h4 {
+  color: #ff7816;
+}
+
+.swiper-slide-active .testimonials-text-after {
+  color: #ff7816;
+}
+
+.swiper-slide-active .testimonials-text-before {
+  color: #ff7816;
+}
+
+.swiper-slide-active .listing-rating i {
+  color: #ff7816;
+}
+
+.swiper-slide-active .testimonials-text {
+  background: #fff;
+  /* box-shadow: 0 0 20px 9px #fd57161f; */
+  box-shadow: 0 0 20px 9px #3e949c1f;
+  min-height: 300px;
+}
+
+.swiper-slide-active .testimonials-text:hover {
+  box-shadow: 0 0 20px 9px #fd57161f;
+}
+
+.testimonials-text p {
+  /* color: #878c9f; */
+  color: #293241;
+  font-size: 14px;
+  line-height: 24px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-weight: 500;
+}
+
+.text-link {
+  position: absolute;
+  bottom: 0;
+  padding: 15px 0;
+  border-radius: 10px 10px 0 0;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.03);
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+}
+
+.swiper-slide-active .testi-item {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.titik .container {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.tc-pagination {
+  float: left;
+  margin-top: 10px;
+  margin-left: 50%;
+  width: 100% !important;
+}
+
+.tc-pagination_wrap {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+}
+
+.tc-pagination2 {
+  float: none;
+  display: inline-block;
+  padding: 14px 0;
+  background: #fff;
+  border-radius: 30px;
+  min-width: 250px;
+  border-bottom: 0;
+}
+
+.tc-pagination .swiper-pagination-bullet,
+.tc-pagination2.swiper-pagination-bullet {
+  opacity: 1;
+  background-color: #3e949c;
+  margin: 0 2px;
+  width: 10px;
+  height: 10px;
+  transition: all 300ms ease-in-out;
+}
+
+.tc-pagination .swiper-pagination-bullet:hover {
+  background-color: #ff7816;
+}
+
+.tc-pagination2.swiper-pagination-bullet:hover {
+  background-color: #ff7816;
+}
+
+@media screen and (max-width: 870px) {
+  .judulreview .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 44%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 0;
+  }
+
+  .review {
+    margin-top: 80px;
+  }
+
+  .review .review-item {
+    padding: 50px 30px 70px 200px;
+    margin: 30px;
+  }
+
+  .review .review-item img {
+    display: -webkit-inline-box;
+    display: inline-flex;
+  }
+
+  .review .container .review-item .quote-icon i {
+    opacity: 1;
+  }
+}
+
+/* Awal Review ------------------------------------------------------------------------------------------------------------- */
+
+/* Awal Partner ---------------------------------------------------------------------------------------------------------- */
+@media (max-width: 800px) {
+  .judulpartner .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 43.5%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+  }
+
+  .partner {
+    padding: 0;
+  }
+
+  h1 {
+    padding: 100px 0 10px;
+    font-size: 40px;
+  }
+}
+
+/* Akhir Partner ---------------------------------------------------------------------------------------------------------- */
+
+/* Awal Contact Us -------------------------------------------------------------------------------------------------------- */
+@media (max-width: 850px) {
+  .contact .container .form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info::before {
+    bottom: initial;
+    top: -75px;
+    right: 65px;
+    transform: scale(0.95);
+  }
+
+  .contact-form::before {
+    top: -13px;
+    left: initial;
+    right: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact .container {
+    padding: 1.5rem;
+  }
+
+  .contact-info::before {
+    display: none;
+  }
+}
+
+/* Akhir Contact Us -------------------------------------------------------------------------------------------------------- */
+
+/* Awal Subjumbotron */
+
+section .subjumbotron {
+  padding: 2rem;
+}
+
+/* Akhir Subjumbotron */
+
+/* Awal Footer ------------------------------------------------------------------------------------------------------------ */
+@media (max-width: 1100px) {
+  footer {
+    padding: 40px;
+  }
+
+  footer .container {
+    flex-direction: column;
+  }
+
+  footer .container .sec {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+  footer .container .sec.aboutus,
+  .sec.kelas,
+  .sec.contact {
+    width: 100%;
+  }
+
+  .copyrightText {
+    padding: 8px 40px;
+  }
+}
+
+/* Akhir Footer ------------------------------------------------------------------------------------------------------------ */
+/* ============================================================================================ Akhir Responsive Screen ==================================================================================================== */

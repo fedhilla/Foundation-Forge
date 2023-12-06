@@ -1,0 +1,3020 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Crimson Text", serif;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.big-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #f1f0ec;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  padding: 0 0 2rem;
+  max-width: 83rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  z-index: 10;
+}
+
+/* Awal Navigation Bar------------------------------------------------------------------------------------------------ */
+header {
+  position: relative;
+  z-index: 70;
+  transition: 0.6s;
+}
+
+header .container {
+  margin-top: 8px;
+  min-height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+
+header.sticky {
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(236, 227, 206);
+}
+
+header.sticky .container {
+  margin-top: 10px;
+  min-height: 0vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlay {
+  display: none;
+}
+
+.logo img {
+  width: 100px;
+  cursor: pointer;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar ul li a {
+  position: relative;
+}
+
+.navbar ul li a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #739072;
+  transition: width 0.3s;
+}
+
+.navbar ul li a:hover:after {
+  width: 50%;
+}
+
+.navbar ul li a:hover {
+  color: #739072;
+}
+
+.navbar a {
+  margin-left: 2rem;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 0.5rem;
+  height: 2.3rem;
+  width: 4rem;
+  line-height: 2.5rem;
+  color: #3a4d39;
+  text-align: center;
+}
+
+.icons li a {
+  display: inline;
+  position: relative;
+}
+
+header .icons div {
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 2.5rem;
+  border-radius: 0.5rem;
+  color: #3a4d39;
+  font-size: 17px;
+  text-align: center;
+}
+
+header .icons div:hover {
+  background: #739072;
+  color: #ece3ce;
+}
+
+.hamburger-menu {
+  position: relative;
+  z-index: 999;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger-menu .bar {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: #3a4d39;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.bar::before,
+.bar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #3a4d39;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.bar::before {
+  transform: translateY(-8px);
+}
+
+.bar::after {
+  transform: translateY(8px);
+}
+
+.big-wrapper.active .hamburger-menu .bar {
+  background-color: transparent;
+}
+
+.big-wrapper.active .bar::before {
+  transform: translateY(0) rotate(-45deg);
+  background-color: #739072;
+}
+
+.big-wrapper.active .bar::after {
+  transform: translateY(0) rotate(45deg);
+  background-color: #739072;
+}
+
+.toggle-btn {
+  display: none;
+}
+
+.big-wrapper.light .toggle-btn i:last-child {
+  display: none;
+}
+
+.big-wrapper.light .toggle-btn i:first-child {
+  display: block;
+}
+
+.big-wrapper.dark .toggle-btn i:last-child {
+  display: block;
+}
+
+.big-wrapper.dark .toggle-btn i:first-child {
+  display: none;
+}
+
+.left img {
+  max-width: 500px;
+  float: left;
+  margin-right: 80px;
+}
+
+.left button {
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #739072;
+  border-width: 0;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ece3ce;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.left button a {
+  color: #f1f0ec;
+}
+
+.left a:hover {
+  color: #3a4d39;
+}
+
+.left button {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.75s;
+}
+
+.left button:hover {
+  background: #ece3ce;
+  color: #3a4d39;
+  transition-delay: 0s;
+}
+/* Akhir Navigation Bar------------------------------------------------------------------------------------------------ */
+
+/* Awal Jumbotron--------------------------------------------------------------------------------------------------- */
+.jumbotron .container {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.left h1 {
+  font-size: 50px;
+  letter-spacing: 2px;
+  color: #3a4d39;
+}
+
+.left span {
+  color: #739072;
+  font-size: 45px;
+}
+
+.left p {
+  letter-spacing: 1.2px;
+  line-height: 30px;
+  color: #3a4d39;
+  font-weight: 600;
+}
+
+/* Awal Coba Gratis ------------------------------------------------------------------------------------------------ */
+.left .btn {
+  position: relative;
+  display: inline-block;
+  background-color: #4f6f52;
+  color: #ece3ce;
+  font-weight: 570;
+  font-size: 18px;
+  width: 160px;
+  height: 43px;
+  line-height: 43px;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 20px;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
+  transition: all 0.2s ease-in-out;
+  margin-top: 27px;
+  overflow: hidden;
+}
+
+.left .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0%;
+  background: #739072;
+  z-index: -1;
+  transition: 0.2s ease-out;
+  outline: none;
+  border: none;
+}
+
+.left .btn:hover::before {
+  left: 0;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.wrapper {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, visibility 0s 0.2s;
+  z-index: 95;
+}
+
+.wrapper .kotak {
+  position: relative;
+  margin: 0px auto;
+  color: #ece3ce;
+  background: rgb(115, 144, 114);
+  border-radius: 15px;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 85vh;
+  box-sizing: border-box;
+  transform: translateY(30%);
+  transition: all 0.28s ease-in-out 0.15s;
+  box-shadow: 0 0 20px 9px rgba(0, 0, 0, 0.3);
+}
+
+.wrapper .kotak .modal-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("https://unsplash.com/photos/9OZVHvAkWs8");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+}
+
+.wrapper .kotak h2.heading {
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 40px;
+  color: #ece3ce;
+}
+
+.wrapper .kotak h3.heading {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 26px;
+  line-height: 28px;
+  color: #739072;
+}
+
+.wrapper .kotak .para {
+  font-size: 17px;
+  line-height: 23px;
+  font-weight: 400;
+  margin: 0 0 15px;
+  color: #ece3ce;
+}
+
+.btn,
+.btn-close {
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.wrapper .btn-close {
+  position: absolute;
+  top: 60px;
+  right: 300px;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  background-color: hsla(0, 0%, 100% 0.3);
+}
+/* 
+.btn:hover,
+.btn:active,
+.btn:focus {
+  color: #ECE3CE;
+  background-color: #739072;
+}
+
+.btn:active:hover,
+.btn:active:focus {
+  color: #fff;
+  background-color: #3e3e3e;
+} */
+
+.wrapper .kotak::-webkit-scrollbar-track {
+  border-radius: 15px;
+}
+
+.wrapper .kotak::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 15px;
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.wrapper .kotak::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: hsla(0, 0%, 100%, 0.5);
+}
+
+.wrapper button,
+.wrapper input {
+  font-family: inherit;
+}
+
+.email-field input {
+  display: block;
+  width: 100%;
+  outline: none;
+}
+
+form > div {
+  position: relative;
+  margin: 30px 0 15px;
+  display: flex;
+}
+
+.email-input {
+  height: 50px;
+  border: none;
+  font-size: 16px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.email-input,
+button.btnn {
+  background-color: rgba(71, 51, 53, 0.8);
+  color: #ece3ce;
+  width: 90px;
+  border-radius: 43px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+button.btnn {
+  background-color: #ece3ce;
+  color: #3a4d39;
+  position: absolute;
+  top: 3.3px;
+  right: 3px;
+  border-radius: 43px;
+  border: none;
+  height: 43px;
+  width: 100px;
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.btnn:hover {
+  color: #ece3ce;
+  background-color: #739072;
+}
+
+.overlay2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.switcher {
+  display: none;
+}
+
+.switcher:checked + .wrapper {
+  transition: visibility 0s, opacity 0.2s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+.switcher:checked + .wrapper .kotak {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Akhir Coba Gratis ------------------------------------------------------------------------------------------------*/
+
+/* Awal Login ----------------------------------------------------------------------------------------------------*/
+.right .form {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.right .form .form-box {
+  width: 380px;
+  height: 480px;
+  position: relative;
+  margin: 6% auto;
+  background: rgb(189, 249, 203);
+  padding: 5px;
+}
+
+.right .form-box {
+  width: 300px;
+  height: 410px;
+  /* margin: auto; */
+  margin-right: 85px;
+  position: relative;
+  background: rgb(58, 77, 57);
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.right .button-box {
+  width: 220px;
+  margin: 20px auto;
+  position: relative;
+  box-shadow: 0 0 10px 1px #4f6f52;
+  border-radius: 15px;
+}
+
+.right .judul {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  font-family: "Crimson Text", serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ece3ce;
+}
+
+.right #btn2 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 110px;
+  height: 100%;
+  background: #739072;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.right .input-group-login {
+  top: 80px;
+  position: absolute;
+  width: 200px;
+  transition: 0.5s;
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+}
+
+.right .input-group-register {
+  top: 80px;
+  position: absolute;
+  width: 200px;
+  transition: 0.5s;
+}
+
+.right .input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #739072;
+  outline: none;
+  background: transparent;
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ece3ce;
+}
+
+.input-field,
+::placeholder {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ece3ce;
+}
+
+.right .input-field:hover {
+  border-bottom: 1px solid #ece3ce;
+}
+
+.input-field,
+:hover::placeholder {
+  color: #4f6f52;
+}
+
+.submit-btn {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-size: 18px;
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin-top: 30px;
+  margin-left: 15px;
+  background: #3a4d39;
+  color: #ece3ce;
+  border: 0;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 1px #4f6f52;
+}
+
+.submit-btn:hover {
+  background-color: #739072;
+  color: #ece3ce;
+}
+
+/* .input-group-login .liw{
+  padding-top: 60px;
+  margin-bottom: -20px;
+  text-align: center;
+  color: #f9eae1;
+} */
+
+.input-group-login .icons a {
+  text-decoration: none;
+}
+
+.input-group-login .icons ion-icon {
+  color: #ece3ce;
+  font-size: 25px;
+  padding-top: -5px;
+  padding-left: 20px;
+}
+
+.input-group-login .icons ion-icon:hover {
+  color: #739072;
+}
+
+.input-group-login p {
+  color: #ece3ce;
+  padding-left: 22px;
+  padding-top: 5px;
+}
+
+.input-group-login span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#login {
+  left: 50px;
+}
+
+#login input {
+  color: white;
+  font-size: 15;
+}
+
+#register {
+  left: 450px;
+}
+
+#register input {
+  color: white;
+  font-size: 15;
+}
+
+.input-group-register .icons a {
+  text-decoration: none;
+}
+
+.input-group-register .icons ion-icon {
+  color: #ece3ce;
+  font-size: 25px;
+  padding-top: -5px;
+  padding-left: 20px;
+}
+
+.input-group-register .icons ion-icon:hover {
+  color: #739072;
+}
+
+/* Akhir Login  ---------------------------------------------------------------------------------------------------- */
+
+/* Akhir Jumbotron --------------------------------------------------------------------------------------------------- */
+
+/* Awal Table */
+.table .container {
+  color: #3a4d39;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  background-color: #f1f0ec;
+}
+
+.table .container table {
+  border-collapse: collapse;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  background-color: #f1f0ec;
+  text-align: left;
+  overflow: hidden;
+}
+
+.table .container thead {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.table .container th {
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.table .container td {
+  padding: 1rem 2rem;
+}
+
+.table .container tr:nth-child(even) {
+  background-color: #f3e3e2;
+}
+
+.table .container td i {
+  color: #3a4d39;
+}
+
+/* Akhir Table */
+
+/* Awal Count-Up ---------------------------------------------------------------------------------------------------- */
+.judulcounter-up {
+  background-color: #f1f0ec;
+}
+
+.judulcounter-up .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.judulcounter-up .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulcounter-up .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 42%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 200px;
+  height: 3px;
+}
+
+.counter-up {
+  background-color: #f1f0ec;
+}
+
+.counter-up .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-top: 180px;
+  margin-bottom: 50px;
+  /* margin-right: 100px; */
+  z-index: 1;
+  background-color: #f1f0ec;
+}
+
+.counter-up .container .middle {
+  position: absolute;
+  margin-top: 100px;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.counter-up .container .counting-sec {
+  padding: 40px 0;
+  margin: auto;
+  width: 100%;
+}
+
+.counter-up .container .inner-width {
+  max-width: 1200px;
+  display: flex;
+}
+
+.counter-up .container .col {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  color: #3a4d39;
+  text-transform: capitalize;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.counter-up .container .col i {
+  font-size: 40px;
+  color: #739072;
+}
+
+.counter-up .container .num {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+/* Akhir Count-Up -------------------------------------------------------------------------------------------------- */
+
+/* Awal Services ---------------------------------------------------------------------------------------------------- */
+.judulservices .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  z-index: 1;
+  margin-bottom: 25px;
+}
+
+.judulservices .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulservices .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 45.3%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 120px;
+  height: 3px;
+}
+
+.boxes .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  z-index: 1;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 230px;
+  grid-gap: 0 15px;
+  margin-bottom: 150px;
+  overflow: hidden;
+}
+
+.box {
+  border: 2px solid #3a4d39;
+  position: relative;
+  height: 150px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.box .inner-box {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 45%;
+  transform: translateY(-50%);
+  color: #3a4d39;
+  transition: 0.3s;
+}
+
+.inner-box span {
+  background-color: #f1f0ec;
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  line-height: 80px;
+  font-size: 50px;
+}
+
+.inner-box h3 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.box p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a4d39;
+  text-align: center;
+  word-break: break-all;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align-last: center;
+  opacity: 0;
+}
+
+.box:hover {
+  border-color: #739072;
+}
+
+.box:hover .inner-box {
+  margin-top: -60px;
+  color: #739072;
+}
+
+.box:hover p {
+  opacity: 1;
+  margin-top: 0;
+  transition: 0.4s;
+  transition-delay: 0.3s;
+}
+
+/* Akhir Services ---------------------------------------------------------------------------------------------------- */
+
+/* Awal Product ---------------------------------------------------------------------------------------------------- */
+.judulproduct .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 100px; */
+  z-index: 1;
+  margin-bottom: 30px;
+}
+
+.judulproduct .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulproduct .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 46.6%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 90px;
+  height: 3.5px;
+}
+
+.product .container {
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 150px;
+  z-index: 1;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: 400px; */
+  grid-gap: 40px 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product .container .card {
+  position: relative;
+  width: 90%;
+  height: 320px;
+  background: #f1f0ec;
+  box-shadow: 0 0 10px 0 #4f6f52;
+  /* border: 2px solid #3A4D39; */
+  border-radius: 15px;
+  overflow: hidden;
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product .container .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #739072;
+  clip-path: circle(130px at 50% 3%);
+  transition: 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.product .container .card:hover:before {
+  clip-path: circle(260px at 50% -35%);
+}
+
+/* .product .container .card::after {
+  content: 'PSD';
+  position: absolute;
+  top: 45%;
+  left: 2%;
+  font-size: 9.8em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(125, 79, 79, 0.1);
+  z-index: 1;
+} */
+
+.product .container .card .imgbx {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 80;
+  width: 100%;
+  height: 220px;
+  transition: 0.5s;
+  justify-content: center;
+}
+
+.product .container .card:hover .imgbx {
+  top: 0%;
+  transform: translateY(-20%);
+}
+
+.product .container .card .imgbx img {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+}
+
+.product .container .card .contentbx {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 10;
+}
+
+.product .container .card:hover .contentbx {
+  height: 163px;
+}
+
+.product .container .card .contentbx h2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #3a4d39;
+}
+/* 
+.product .container .card .contentbx .level {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.product .container .card:hover .contentbx .level {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.product .container .card .contentbx .level h3 {
+  color: #7d4f50;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+ */
+
+.product .container .card .contentbx .level {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.product .container .card:hover .contentbx .level {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.product .container .card .contentbx .level h3 {
+  color: #3a4d39;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.product .container .card .contentbx .level label {
+  color: #3a4d39;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.product .container .card .contentbx .level span {
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  display: inline-block;
+  color: #f1f0ec;
+  background: #3a4d39;
+  margin: 0 5px;
+  transition: 0.5s;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product .container .card .contentbx .level select {
+  width: 40px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 16px;
+  display: inline-block;
+  color: #3a4d39;
+  background: #f1f0ec;
+  margin: 0 5px;
+  transition: 0.5s;
+  font-weight: 600;
+  border-radius: 4px;
+  border-color: #3a4d39;
+  cursor: pointer;
+  font-family: "Crimson Text", serif;
+}
+
+.product .container .card .contentbx .level span:hover {
+  background: #f1f0ec;
+  color: #3a4d39;
+}
+.product .container .card .contentbx .level span {
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  display: inline-block;
+  color: #ece3ce;
+  background: #739072;
+  margin: 0 5px;
+  transition: 0.5s;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product .container .card .contentbx .level span:hover {
+  background: #ece3ce;
+  color: #3a4d39;
+}
+
+.product .container .card .contentbx .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: -10px; */
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.product .container .card .contentbx .price h3 {
+  color: #3a4d39;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.product .container .card:hover .contentbx .price {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.product .container .card .contentbx button {
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #739072;
+  border-width: 0;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ece3ce;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.product .container .card .contentbx button a {
+  color: #f1f0ec;
+}
+
+.product .container .card .contentbx button a:hover {
+  color: #3a4d39;
+}
+
+.product .container .card:hover .contentbx button {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.75s;
+}
+
+.product .container .card .contentbx button:hover {
+  background: #ece3ce;
+  color: #3a4d39;
+  transition-delay: 0s;
+}
+
+/* .product .container .card .contentbx a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #739072;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ECE3CE;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+}
+
+.product .container .card:hover .contentbx a {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.75s;
+}
+
+.product .container .card .contentbx a:hover {
+  background: #f9eae1;
+  color: #7d4f50;
+  transition-delay: 0s;
+} */
+
+/* Akhir Product ---------------------------------------------------------------------------------------------------- */
+
+/* Awal Promo ------------------------------------------------------------------------------------------------------- */
+.judulpromo .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 5px auto;
+}
+
+.judulpromo .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulpromo .container h1:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 0px;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.judulpromo .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 45.5%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 100px;
+  height: 3px;
+}
+
+.promo .container {
+  align-items: center;
+  justify-content: center;
+  margin-top: -35px;
+  margin-bottom: 100px;
+  z-index: 1;
+  width: 80%;
+  height: 600px;
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: 400px; */
+  grid-gap: 0 20px;
+  overflow: hidden;
+  font-family: "Crimson Text", serif;
+  /* position: absolute;
+  width: 938px;
+  top: 50%;
+  left: 30px;
+  right: 0; */
+}
+
+.promo .container .card {
+  /* margin: 0 auto;
+  display: inline-block;
+  position: relative; */
+  margin: auto;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  /* margin-right: 30px; */
+  width: 280px;
+  transform: scale(0);
+  -webkit-transform: scale(1);
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  opacity: 0.5;
+  box-shadow: 0px 17px 46px -10px #7777;
+  height: 400px;
+  border-radius: 14px;
+  background: #f1f0ec;
+}
+
+.promo .container .card:nth-of-type(1) {
+  animation: intro 0.3s 0.3s forwards;
+  -webkit-animation: intro 0.3s 0.3s forwards;
+}
+
+.promo .container .card:nth-of-type(2) {
+  animation: intro 0.5s 0.8s forwards;
+  -webkit-animation: intro 0.5s 0.8s forwards;
+}
+
+.promo .container .card:nth-of-type(3) {
+  animation: intro 1s 1.2s forwards;
+  -webkit-animation: intro 1s 1.2s forwards;
+}
+
+@-webkit-keyframes intro {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+
+  25% {
+    transform: scale(1.06);
+    -webkit-transform: scale(1.06);
+  }
+
+  50% {
+    transform: scale(0.965);
+    -webkit-transform: scale(0.965);
+  }
+
+  75% {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes intro {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+
+  25% {
+    transform: scale(1.06);
+    -webkit-transform: scale(1.06);
+  }
+
+  50% {
+    transform: scale(0.965);
+    -webkit-transform: scale(0.965);
+  }
+
+  75% {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+.promo .container .card:hover .card-inner-circle span i {
+  color: #3a4d39;
+  animation: launch 0.3s forwards;
+}
+
+@-webkit-keyframes launch {
+  0% {
+    left: 1px;
+  }
+
+  25% {
+    left: 1px;
+    top: 50px;
+  }
+
+  50% {
+    left: -100px;
+  }
+
+  75% {
+    top: 100px;
+    transform: rotate(40deg);
+  }
+
+  100% {
+    left: 1px;
+  }
+}
+
+@keyframes launch {
+  0% {
+    left: 1px;
+  }
+
+  25% {
+    left: 1px;
+    top: -50px;
+  }
+
+  50% {
+    left: -100px;
+  }
+
+  75% {
+    top: 100px;
+    transform: rotate(40deg);
+  }
+
+  100% {
+    left: 1px;
+  }
+}
+
+.promo .container .card .card-inner-circle span i {
+  margin-top: 22px;
+  left: 1px;
+  position: relative;
+  height: 26px;
+  transition: all 0.2s;
+}
+
+.promo .container .card .card-inner-circle {
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  position: absolute;
+  background: #f1f0ec;
+  z-index: 10;
+  height: 70px;
+  border-radius: 200px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.3);
+  border: 4px solid #fff;
+  top: 30px;
+}
+
+.promo .container .card .card-inner-circle:hover {
+  transform: scale(1.1);
+}
+
+.promo .container .card .card-inner-content {
+  padding: 20px;
+}
+
+.promo .container .card .card-inner-content .title {
+  margin-top: 50%;
+  color: #3a4d39;
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.promo .container .card .card-inner-content .price {
+  color: #3a4d39;
+  font-weight: 800;
+  font-size: 40px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.promo .container .card .card-inner-btn {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 200px;
+}
+
+.promo .container .card .card-inner-btn button {
+  padding: 10px;
+  width: 100%;
+  background: #739072;
+  border: none;
+  border-radius: 15px;
+  font-family: "Crimson Text", serif;
+  outline: none;
+  font-size: 20px;
+  color: #ece3ce;
+  transform: scale(0.94);
+  -webkit-transform: scale(0.94);
+  cursor: pointer;
+  /* transition: box-shadow 0.5s;
+  transform: 0.5s 0.3s ;
+  -webkit-transition: box-shadow 0.5s;
+  -webkit-transform: 0.5s 0.3s ; */
+}
+
+.promo .container .card .card-inner-btn button span {
+  text-shadow: 0px 4px 18px #ece3ce;
+}
+
+.promo .container .card .card-inner-btn button:hover {
+  background-color: #ece3ce;
+  color: #3a4d39;
+  box-shadow: 0px 0px 10px 1px #3a4d39;
+}
+
+.promo .container .card:hover .card-inner-btn button {
+  transform: scale(1.1);
+}
+
+.promo .container .card:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* .card-inner-content .text1 p::after{
+  content: '';
+  position: absolute;
+  left: 5%;
+  transform: translateY(-50%,-80%);
+  background-color: #739072;
+  width: 250px;
+  height: 3px;
+} */
+
+.card-inner-content .text1 {
+  display: flex;
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  margin-top: 5px;
+  line-height: 16px;
+  color: #3a4d39;
+  /* margin-right: 5px; */
+}
+
+.card-inner-content .text1 span i {
+  margin-right: 10px;
+}
+
+.card-inner-content .code {
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 15px;
+  color: #3a4d39;
+  line-height: 16px;
+}
+
+/* Akhir Promo ------------------------------------------------------------------------------------------------------- */
+
+/* Awal Review ------------------------------------------------------------------------------------------------------- */
+.judulreview .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-bottom: 70px;
+}
+
+.judulreview .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulreview .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 45%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 130px;
+  height: 3px;
+}
+
+.review .container {
+  margin-top: -60px;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin-bottom: 40px;
+}
+
+.review .container .review-item {
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 55px;
+  position: relative;
+  width: 400px;
+  height: 255px;
+  margin-left: 55px;
+  padding: 50px 30px 70px 30px;
+  background: #f1f0ec;
+}
+
+.review .container .review-item img {
+  border-radius: 50%;
+  width: 150px;
+  /* display: none; */
+  position: absolute;
+  left: -30px;
+  top: -10px;
+  border: 10px double #739072;
+}
+
+.review .container .review-item .quote-icon i {
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
+  color: #739072;
+  font-size: 48px;
+  opacity: 1;
+}
+
+.review .container .review-item p {
+  margin-left: 100px;
+  margin-top: -30px;
+  font-weight: 500;
+  color: #3a4d39;
+}
+
+.review .container .review-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 30px;
+  color: #3a4d39;
+}
+
+.review .container .review-item span.position {
+  font-size: 14px;
+  color: #3a4d39;
+  font-weight: 500;
+  float: left;
+}
+
+.review .container .review-item ul.stars {
+  margin-top: 20px;
+  position: absolute;
+}
+
+.review .container .review-item ul.stars li {
+  display: inline-block;
+}
+
+.review .container .review-item ul.stars li i {
+  font-size: 14px;
+  color: #739072;
+}
+
+.review .owl-dots {
+  margin-top: 0;
+  text-align: center;
+}
+
+.review .owl-dots .owl-dot {
+  margin: 0 5px;
+  width: 14px;
+  height: 14px;
+  background-color: #739072;
+  transition: all 0.5s;
+  margin-bottom: 100px;
+}
+
+.review .owl-dots .active {
+  height: 14px;
+  background-color: transparent;
+  border: 2px solid #3a4d39;
+}
+
+.review .container .item:hover {
+  display: block;
+  transition: all ease 0.5s;
+  transform: scale(1.05) translateY(-5px);
+}
+
+/* Akhir Review ------------------------------------------------------------------------------------------------------- */
+
+/* Awal Partner ---------------------------------------------------------------------------------------------------*/
+.judulpartner .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 5px auto;
+}
+
+.judulpartner .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulpartner .container h1:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 0px;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.judulpartner .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 43.5%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 140px;
+  height: 3px;
+}
+
+.partner .container {
+  padding-top: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin-bottom: 80px;
+}
+
+.partner .container img {
+  width: 100%;
+}
+
+.partner .container .item {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.partner .slick-slide {
+  margin: 15px;
+}
+
+.partner .container .item:hover {
+  display: block;
+  transition: all ease 0.5s;
+  transform: scale(1.05) translateY(-5px);
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+/* Akhir Partner ---------------------------------------------------------------------------------------------------- */
+
+/* Awal Our Mentor --------------------------------------------------------------------------------------------------- */
+.judulmentor .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 5px auto;
+  margin-bottom: 20px;
+}
+
+.judulmentor .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judulmentor .container h1:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 0px;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.judulmentor .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 44%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 120px;
+  height: 3px;
+}
+
+.mentor .container {
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.mentor .container section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 85%;
+  margin: auto;
+}
+
+.mentor .container section .team {
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0 20px;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  /* border: 2px solid #739072; */
+  background-color: #f1f0ec;
+}
+
+.mentor .container section .team::before {
+  content: "";
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  object-fit: cover;
+  filter: blur(4px) grayscale(100%);
+}
+
+.mentor .container section .team img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 400px;
+  border-radius: 25px;
+  z-index: 3;
+  object-fit: cover;
+  border: none;
+}
+
+.mentor .container section .team:hover img {
+  width: 150px;
+  height: 200px;
+  border: 2px solid #739072;
+  left: 80px;
+  top: 40px;
+  transition: 0.5s;
+}
+
+.mentor .container section .team .info {
+  background-color: #f1f0ec;
+  position: absolute;
+  top: 150px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  color: #3a4d39;
+  padding: 8px;
+  border-top: 8px solid #739072;
+  border-radius: 50% 50% 0px 0px;
+  padding-top: 70px;
+  text-align: center;
+  justify-content: center;
+  transform: scale(2);
+  transition: 0.5s;
+}
+
+.mentor .container section .team .name {
+  font-size: 24px;
+  padding: 16px;
+  text-transform: capitalize;
+}
+
+.mentor .container section .team .title {
+  color: #3a4d39;
+  text-transform: capitalize;
+}
+
+.mentor .container section .team:hover .info {
+  transform: scale(1);
+}
+
+.mentor .container section .team .social {
+  padding-block: 16px;
+  font-size: 24px;
+}
+
+.mentor .container section .team .social i {
+  display: inline-block;
+  padding: 12px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.mentor .container section .team .social i:hover {
+  color: #739072;
+}
+
+/* Akhir Our Mentor --------------------------------------------------------------------------------------------------- */
+
+/* Awal Timeline -------------------------------------------------------------------------------------------------------*/
+.containerjudul {
+  background-color: #f1f0ec;
+}
+
+.judultimeline .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 5px auto;
+  /* margin-bottom: 20px; */
+  background-color: #3a4d39;
+  margin-top: 130px;
+}
+
+.judultimeline .container h1 {
+  color: #3a4d39;
+  font-size: 36px;
+}
+
+.judultimeline .container h1:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 0px;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.judultimeline .container h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 44%;
+  transform: translateY(-50%, -50%);
+  background-color: #739072;
+  width: 120px;
+  height: 3px;
+}
+
+.timeline .container {
+  margin-top: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #f1f0ec;
+}
+
+.timeline .container .start ul li:nth-child(odd) {
+  /* background: url(../IMG/process-line-3-.png) 65px top no-repeat; */
+  padding-top: 20px;
+}
+
+.timeline .container .start ul li:nth-child(even) {
+  /* background: url(../IMG/process-line-2-.png) 65px top no-repeat; */
+  padding-top: 20px;
+  padding-left: 590px;
+}
+
+/* #foto1_tl {
+  margin-top: 20px;
+} */
+
+.timeline .container ul .line1 img {
+  width: 420px;
+  margin-left: 115px;
+  margin-top: -20px;
+}
+
+.timeline .container ul .line2 img {
+  width: 500px;
+  margin-left: 100px;
+}
+
+.timeline .container ul .line3 img {
+  width: 500px;
+  margin-left: -400px;
+  margin-top: 10px;
+}
+
+.timeline .container ul li .left .icon img {
+  width: 270px;
+  margin-left: 5px;
+  margin-top: -20px;
+  border: #3a4d39;
+}
+
+.timeline .container ul li .left .icon .two {
+  width: 290px;
+  margin-left: 0px;
+  margin-top: -80px;
+}
+
+.timeline .container ul li .left .icon .three {
+  width: 350px;
+  margin-left: 0px;
+  margin-top: -50px;
+}
+
+.timeline .container ul li .left .icon .four {
+  width: 290px;
+  margin-left: 0px;
+  margin-top: -40px;
+}
+
+.timeline .container ul li .left .icon .five {
+  width: 300px;
+  margin-left: 30px;
+  margin-top: -40px;
+}
+
+.timeline .container .start ul li .icon {
+  /* margin: 30px 0; */
+  display: inline-block;
+  height: 124px;
+  margin-right: 30px;
+  width: 124px;
+  text-align: center;
+}
+
+.timeline .container .start ul li h4 {
+  color: #3a4d39;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.timeline .container .start ul li h5 {
+  color: #3a4d39;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.timeline .container .start ul li .media-body {
+  max-width: 390px;
+}
+
+.timeline .container .start ul li p {
+  color: #3a4d39;
+  text-align: left;
+}
+
+/* .timeline .container .left .two .icon img {
+  width: 180px;
+  height: 180px;
+  margin-top: -1000px;
+  margin-left: -10px;
+}
+
+.timeline .container ul li .left .three .icon img {
+  width: 150px;
+  height: 150px;
+  margin-left: -50px;
+}
+
+.timeline .container ul li .left .four .icon img {
+  width: 150px;
+  height: 150px;
+  margin-left: -50px;
+}
+
+.timeline .container ul li .left .five .icon img {
+  width: 150px;
+  height: 150px;
+  margin-left: -50px;
+} */
+
+.timeline .container ul li {
+  list-style: none;
+}
+
+/* Akhir Timeline ------------------------------------------------------------------------------------------------------*/
+
+/* Awal Subjumbotron -------------------------------------------------------------------------------------------------- */
+
+.subjumbotron1 .container section {
+  padding: 5rem 9%;
+  margin-bottom: 120px;
+}
+
+.subjumbotron1 .container section .subjumbotron {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 10rem;
+  position: relative;
+}
+
+.subjumbotron1 .container .content {
+  padding-left: 130px;
+}
+
+.subjumbotron1 .container .content h3 {
+  font-size: 3.5rem;
+  color: #3a4d39;
+  line-height: 1.8;
+}
+
+.subjumbotron1 .container .cloud {
+  position: absolute;
+  top: 222px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 10rem;
+  background-size: 250rem 18rem;
+  background: url(../IMG/cloud.png) repeat-x;
+  animation: cloud 10s linear infinite;
+}
+
+@keyframes cloud {
+  0% {
+    background-position-x: 0rem;
+  }
+  100% {
+    background-position-x: -250rem;
+  }
+}
+
+.subjumbotron1 .container .cloud-1 {
+  top: 180px;
+  opacity: 0.5;
+  height: 12rem;
+  background-size: 250rem 20rem;
+  animation-direction: reverse;
+  animation-duration: 15s;
+}
+
+/* Akhir Subjumbotron -------------------------------------------------------------------------------------------------- */
+
+/* PAYMENT */
+
+.payment .container {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  max-width: 700px;
+  width: 100%;
+  background-color: #f1f0ec;
+  color: #3a4d39;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.payment .container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.payment .container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 40px;
+  height: 3px;
+  width: 90px;
+  border-radius: 5px;
+  background: #3a4d39;
+}
+
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+form .user-details .input-box input::placeholder {
+  color: #739072;
+}
+
+form .user-details .input-box input:hover::placeholder {
+  color: #ece3ce;
+}
+
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #3a4d39;
+}
+
+form .class-details .class-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .level-details .level-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .payment-details .payment-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  /* margin-right: 10px; */
+  /* margin-left: 10px; */
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.class-details label {
+  margin-top: 20px;
+  margin-left: -40px;
+}
+
+.level-details label {
+  margin-top: 20px;
+  margin-left: -42px;
+}
+
+.payment-details label {
+  margin-top: 20px;
+  margin-left: -68px;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three,
+#dot-4:checked ~ .category label .four,
+#dot-5:checked ~ .category label .five,
+#dot-6:checked ~ .category label .six,
+#dot-7:checked ~ .category label .seven,
+#dot-8:checked ~ .category label .eight,
+#dot-9:checked ~ .category label .nine,
+#dot-10:checked ~ .category label .ten,
+#dot-11:checked ~ .category label .eleven,
+#dot-12:checked ~ .category label .twelve,
+#dot-13:checked ~ .category label .thirteen,
+#dot-14:checked ~ .category label .fourteen {
+  background: #ece3ce;
+  border-color: #739072;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #f1f0ec;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: #739072;
+}
+
+form .button input:hover {
+  /* transform: scale(0.99); */
+  background-color: #ece3ce;
+}
+
+/* PAYMENT */
+
+/* Awal Footer ------------------------------------------------------------------------------------------------------ */
+
+footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 25px 100px;
+  background: #739072;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 90%;
+}
+
+footer .container .sec {
+  margin-right: 30px;
+}
+
+footer .container .sec.aboutus {
+  width: 40%;
+}
+
+footer .container .sec.kelas h2 {
+  position: relative;
+  color: #ece3ce;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+footer .container .sec.kelas h2::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #ece3ce;
+}
+
+footer .container .sec.about h2 {
+  position: relative;
+  color: #ece3ce;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+footer .container .sec.about h2::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 90px;
+  height: 2px;
+  background: #ece3ce;
+}
+
+footer p {
+  color: #ece3ce;
+}
+
+footer .container .sci {
+  margin-top: 20px;
+  display: flex;
+}
+
+footer .container .sci li {
+  list-style: none;
+}
+
+footer .container .sci li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  padding-right: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #ece3ce;
+  font-size: 20px;
+}
+
+footer .container .sci li a:hover {
+  color: #739072;
+}
+
+footer .container .kelas {
+  position: relative;
+  /* width: 30%; */
+  justify-content: center;
+  align-items: center;
+}
+
+footer .container .kelas ul li {
+  list-style: none;
+}
+
+footer .container .kelas ul li a {
+  color: #ece3ce;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+footer .container .kelas ul li a:hover {
+  color: #739072;
+}
+
+footer .container .about {
+  position: relative;
+  /* width: 20%; */
+  justify-content: center;
+  align-items: center;
+}
+
+footer .container .about ul li {
+  list-style: none;
+}
+
+footer .container .about ul li a {
+  color: #ece3ce;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+footer .container .about ul li a:hover {
+  color: #739072;
+}
+
+/* Akhir Footer ------------------------------------------------------------------------------------------------------ */
+
+/* CopyRight --------------------------------------------------------------------------------------------------------- */
+.copyrightText {
+  width: 100%;
+  background: #739072;
+  text-align: center;
+  color: #ece3ce;
+}
+
+/* CopyRight --------------------------------------------------------------------------------------------------------- */
+
+/* 
+.test .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  z-index: 1;
+}
+
+.test p {
+  font-size: 20px;
+  } */
+
+/* ======================================================================================================================================================================================================================== */
+
+/* ================================================================================================= Awal Responsive Screen =============================================================================================== */
+@media screen and (max-width: 870px) {
+  /* Awal Navigation Bar ------------------------------------------------------------------------------------------------- */
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #ece3ce;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: 1s;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    margin-left: 0;
+    margin-top: 50px;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+  .big-wrapper.active .navbar {
+    transform: translateX(0);
+    box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .big-wrapper.active .overlay {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  /* Akhir Navigation Bar --------------------------------------------------------------------------------------------------*/
+
+  /* Awal Jumbotron ---------------------------------------------------------------------------------------------------- */
+  .jumbotron .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 70px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Akhir Jumbotron --------------------------------------------------------------------------------------------------- */
+}
+
+/* Awal Coba Gratis ----------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 860px) {
+  .wrapper .kotak {
+    padding: 20px;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 60px;
+    right: -15px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .wrapper .kotak {
+    padding: 20px;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 60px;
+    right: -15px;
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  .wrapper .kotak {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .wrapper .kotak {
+    max-width: 90vw;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 60px;
+    right: -15px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .wrapper .kotak {
+    padding: 30px;
+    width: 540px;
+    max-width: 100%;
+  }
+}
+
+/* Akhir Coba Gratis --------------------------------------------------------------------------------------------------- */
+
+/* Awal Login ------------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 960px) {
+  .right .account-page {
+    max-width: 90%;
+    margin: auto;
+    z-index: 999;
+  }
+
+  .right .form-box {
+    position: relative;
+    padding: 5px;
+    max-width: 90%;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .right .form-box {
+    max-width: 90%;
+  }
+}
+
+/* Akhir Login ---------------------------------------------------------------------------------------------------------- */
+
+/* Awal Counter Up --------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 870px) {
+  .judulcounter-up .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 44%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 0;
+  }
+  .counter-up {
+    margin-top: 280px;
+  }
+
+  .counter-up .container .inner-width {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Akhir Counter Up ------------------------------------------------------------------------------------------------------- */
+
+/* Awal Services ---------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 870px) {
+  .judulservices .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 43.5%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 0;
+  }
+
+  .boxes .container {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 10px; */
+  }
+
+  .box:nth-child(2) {
+    margin-bottom: 40px;
+  }
+
+  .box:nth-child(3) {
+    margin-bottom: 40px;
+  }
+
+  .box:nth-child(4) {
+    margin-bottom: 40px;
+  }
+
+  .box:nth-child(5) {
+    margin-bottom: 40px;
+  }
+
+  .box:nth-child(6) {
+    margin-bottom: 40px;
+  }
+
+  .box p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #3a4d39;
+    text-align: center;
+    word-break: break-all;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align-last: center;
+    opacity: 0;
+  }
+}
+
+/* Akhir Services ---------------------------------------------------------------------------------------------------------- */
+
+/* Awal Product ---------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 870px) {
+  .judulproduct .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 44%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 0;
+  }
+
+  .product .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Akhir Product ---------------------------------------------------------------------------------------------------------- */
+
+/* Awal Promo ---------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 870px) {
+  .judulpromo .container {
+    margin-bottom: 40px;
+  }
+
+  .judulpromo .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 44%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 0;
+  }
+
+  .promo .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px 20px;
+    height: 1400px;
+  }
+}
+
+/* Akhir Promo ---------------------------------------------------------------------------------------------------------- */
+
+/* Awal Review ------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 870px) {
+  .judulreview .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 44%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+    margin-bottom: 0;
+  }
+
+  .review {
+    margin-top: 80px;
+  }
+
+  .review .review-item {
+    padding: 50px 30px 70px 200px;
+    margin: 30px;
+  }
+
+  .review .review-item img {
+    display: -webkit-inline-box;
+    display: inline-flex;
+  }
+
+  .review .container .review-item .quote-icon i {
+    opacity: 1;
+  }
+}
+
+/* Awal Review ------------------------------------------------------------------------------------------------------------- */
+
+/* Awal Partner ---------------------------------------------------------------------------------------------------------- */
+@media (max-width: 800px) {
+  .judulpartner .container h1::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 43.5%;
+    transform: translateY(-50%, -50%);
+    background-color: #739072;
+    width: 100px;
+    height: 3px;
+  }
+
+  .partner {
+    padding: 0;
+  }
+
+  h1 {
+    padding: 100px 0 10px;
+    font-size: 40px;
+  }
+}
+
+/* Akhir Partner ---------------------------------------------------------------------------------------------------------- */
+
+/* Awal Contact Us -------------------------------------------------------------------------------------------------------- */
+@media (max-width: 850px) {
+  .contact .container .form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info::before {
+    bottom: initial;
+    top: -75px;
+    right: 65px;
+    transform: scale(0.95);
+  }
+
+  .contact-form::before {
+    top: -13px;
+    left: initial;
+    right: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact .container {
+    padding: 1.5rem;
+  }
+
+  .contact-info::before {
+    display: none;
+  }
+}
+
+/* Akhir Contact Us -------------------------------------------------------------------------------------------------------- */
+
+/* Awal Subjumbotron */
+
+section .subjumbotron {
+  padding: 2rem;
+}
+
+/* Akhir Subjumbotron */
+
+/* Awal Footer ------------------------------------------------------------------------------------------------------------ */
+@media (max-width: 991px) {
+  footer {
+    padding: 40px;
+  }
+
+  footer .container {
+    flex-direction: column;
+  }
+
+  footer .container .sec {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+  footer .container .sec.aboutus,
+  .sec.kelas,
+  .sec.contact {
+    width: 100%;
+  }
+
+  .copyrightText {
+    padding: 8px 40px;
+  }
+}
+
+/* Akhir Footer ------------------------------------------------------------------------------------------------------------ */
+/* ============================================================================================ Akhir Responsive Screen ==================================================================================================== */
